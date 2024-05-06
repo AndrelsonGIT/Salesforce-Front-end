@@ -1,0 +1,25 @@
+:root{
+    --triangle-size: 60px;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: var(--triangle-size) solid transparent;
+    border-bottom: var(--triangle-size) solid transparent;
+    border-left: var(--triangle-size) solid #00A1E0;
+    position: absolute;
+}
+
+
+.left{
+    rotate: 135deg;
+    left: -20px;
+    bottom: 0;
+}
+
+.right{
+    rotate: 315deg;
+    right: 0;
+    top: 0;
+}

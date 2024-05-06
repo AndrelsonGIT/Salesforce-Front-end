@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@Layer base{
+    @font-face {
+        font-family: 'Salesforce Sans';
+        font-style: normal;
+        font-display: swap;
+        src: url('fonts/SalesforceSans-Regular.ttf') format('truetype');
+        font-weight: normal;
+    }
+
+    @font-face {
+        font-family: 'Salesforce Sans';
+        src: url('fonts/SalesforceSans-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    /*@font-face {*/
+    /*    font-family: 'metropolis';*/
+    /*    src: url('fonts/SalesforceSans-Thin.ttf') format('truetype');*/
+    /*    font-weight: 400;*/
+    /*    font-style: normal;*/
+    /*}*/
+}
+
+*{
+    font-family: 'Salesforce Sans';
+
+}
+
+body{
+    margin: 0 5%;
+    color: #032D60;
+    overflow-x: hidden;
+}
+
+#root{
+    height: 100vh;
+}
+
