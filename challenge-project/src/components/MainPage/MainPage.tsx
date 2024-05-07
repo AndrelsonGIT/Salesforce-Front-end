@@ -68,6 +68,20 @@ function MainPage() {
                 </div>
             </div>
         {/* TODO: FAZER AS ULTIMAS DUAS DIVS   */}
+            <div className="bg-secondary-color w-2/3 p-7 mt-10 flex flex-col gap-5 justify-center items-center rounded-md shadow-md 
+            sm:gap-10 sm:w-2/3 sm:flex-row sm:justify-around">
+                <p className="text-white w-[50%] md:m-0">
+                Experimente o Salesforce gratuitamente. Não é necessário cartão de crédito nem instalação de software.
+                </p>
+                <button className="bg-white h-12 text-primary-color rounded-md text-center text-sm mb-3 sm:w-52 sm:mb-0   ">
+                    Começar teste gratuito
+                </button>
+            </div>
+
+            <div className="flex gap-3 justify-center items-center flex-col mt-10 w-[70%]">
+                <h2 className="text-center w-40 font-bold md:text-lg md:w-60 lg:text-">Você tem dúvidas? Vamos ajudá-lo a encontrar a direção correta</h2>
+                <button className="border-2 border-primary-color rounded-md p-3">Entre em contato</button>
+            </div>
         </div>
 
     );
