@@ -1,4 +1,3 @@
-import React from 'react';
 import MainHeroApresentation from "./MainHeroApresentation.tsx";
 import MainPageCard from "./MainPageCard.tsx";
 import MPCompanyFeedback from "./MPCompanyFeedback.tsx";
@@ -64,23 +63,27 @@ function MainPage() {
                             Confira abaixo tudo que você precisa saber sobre CRM..</p>
                         <MPButton name="Saiba mais"></MPButton>
                     </div>
-                    <img className="w-[80%] sm:w-[60%] md:w-[40%]" src="https://i.ibb.co/RyHD1dw/image-6-1.png" alt="images descrevendo o que é CRM"/>
+                    <img className="w-[60%] md:w-[40%]" src="https://i.ibb.co/RyHD1dw/image-6-1.png" alt="images descrevendo o que é CRM"/>
                 </div>
             </div>
         {/* TODO: FAZER AS ULTIMAS DUAS DIVS   */}
-            <div className="bg-secondary-color w-2/3 p-7 mt-10 flex flex-col gap-5 justify-center items-center rounded-md shadow-md 
-            sm:gap-10 sm:w-2/3 sm:flex-row sm:justify-around">
+            <div className="bg-secondary-color w-2/3 p-1 mt-10 flex flex-col gap-5 justify-center items-center rounded-md
+            shadow-[0px_10px_20px_9px_rgba(0,0,0,0.27)]
+            sm:gap-10 sm:p-5 sm:flex-row sm:justify-around lg:text-lg lg:p-12 xl:p-10 xl:p-10 xl:text-xl ">
                 <p className="text-white w-[50%] md:m-0">
                 Experimente o Salesforce gratuitamente. Não é necessário cartão de crédito nem instalação de software.
                 </p>
-                <button className="bg-white h-12 text-primary-color rounded-md text-center text-sm mb-3 sm:w-52 sm:mb-0   ">
+                <button className="bg-white h-12 w-[70%] text-primary-color rounded-md text-center text-sm mb-3 sm:w-52 sm:mb-0 lg:text-lg   ">
                     Começar teste gratuito
                 </button>
             </div>
 
-            <div className="flex gap-3 justify-center items-center flex-col mt-10 w-[70%]">
-                <h2 className="text-center w-40 font-bold md:text-lg md:w-60 lg:text-">Você tem dúvidas? Vamos ajudá-lo a encontrar a direção correta</h2>
-                <button className="border-2 border-primary-color rounded-md p-3">Entre em contato</button>
+            <div className="flex gap-3 sm:text-lg justify-center items-center flex-col mt-10 w-[70%]">
+                <h2 className="text-center w-40 sm:w-52 font-bold md:text-lg md:w-60 lg:text-2xl">
+                    Você tem dúvidas? Vamos ajudá-lo a encontrar a direção correta</h2>
+                <button className="border-2 border-primary-color rounded-md p-3 hover:bg-primary-color
+                 hover:text-white transition duration-150 ease-in-out">
+                    Entre em contato</button>
             </div>
         </div>
 
