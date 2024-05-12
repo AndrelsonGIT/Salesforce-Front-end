@@ -9,8 +9,8 @@ const WhyChooseText: React.FC<WhyChooseTextProps> = ({mainText, secondText, thir
     return (
         <div className="flex flex-col gap-4">
             <h2 className="font-bold text-xl">{mainText}</h2>
-            <h3 className="font-bold text-lg">{secondText}</h3>
-            <p className="font-bold">{thirdText}</p>
+            <h3 className="underline decoration-blue-900 text-lg">{secondText}</h3>
+            <p className="">{thirdText}</p>
         </div>
     );
 };

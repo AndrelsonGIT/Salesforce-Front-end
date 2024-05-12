@@ -2,6 +2,7 @@ import MainHeroApresentation from "./MainHeroApresentation.tsx";
 import MainPageCard from "./MainPageCard.tsx";
 import MPCompanyFeedback from "./MPCompanyFeedback.tsx";
 import MPButton from "./MPButton.tsx";
+import WhiteButtonSalesforce from "./WhiteButtonSalesforce.tsx";
 
 function MainPage() {
     return (
@@ -66,16 +67,13 @@ function MainPage() {
                     <img className="w-[60%] md:w-[40%]" src="https://i.ibb.co/RyHD1dw/image-6-1.png" alt="images descrevendo o que é CRM"/>
                 </div>
             </div>
-        {/* TODO: FAZER AS ULTIMAS DUAS DIVS   */}
             <div className="bg-secondary-color w-2/3 p-1 mt-10 flex flex-col gap-5 justify-center items-center rounded-md
             shadow-[0px_10px_20px_9px_rgba(0,0,0,0.27)]
-            sm:gap-10 sm:p-5 sm:flex-row sm:justify-around lg:text-lg lg:p-12 xl:p-10 xl:p-10 xl:text-xl ">
+            sm:gap-10 sm:p-5 sm:flex-row sm:justify-around lg:text-lg lg:p-12 xl:p-10 xl:text-xl ">
                 <p className="text-white w-[50%] md:m-0">
                 Experimente o Salesforce gratuitamente. Não é necessário cartão de crédito nem instalação de software.
                 </p>
-                <button className="bg-white h-12 w-[70%] text-primary-color rounded-md text-center text-sm mb-3 sm:w-52 sm:mb-0 lg:text-lg   ">
-                    Começar teste gratuito
-                </button>
+                <WhiteButtonSalesforce text="Começar teste gratuito"/>
             </div>
 
             <div className="flex gap-3 sm:text-lg justify-center items-center flex-col mt-10 w-[70%]">

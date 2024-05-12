@@ -1,5 +1,8 @@
 import ProductCardWhyChoose from "./ProductCardWhyChoose.tsx";
 import WhyChooseText from "./WhyChooseText.tsx";
+import ClientCompaniesImages from "./ClientCompaniesImages.tsx";
+import ContactCardSales from "./ContactCardSales.tsx";
+
 
 const WhyChoose = () => {
     return (
@@ -9,23 +12,23 @@ const WhyChoose = () => {
                  alt=""/>
 
             <div className="flex flex-col items-center">
-                <h2 className="text-secondary-color text-center font-extrabold  min-[400px]:text-xl sm:text-2xl
+                <h2 className="text-secondary-color text-center font-extrabold min-[400px]:text-xl sm:text-2xl
                  md:text-3xl lg:text-4xl xl:5x1 mb-3">Por que usar a Salesforce</h2>
                 <img className="w-[90%] min-[400px]:w-[300px] sm:w-[50%] max-w-xl"
-                   src="https://i.ibb.co/vQYQbg0/Person-360-salesforce.png" alt=""/>
+                     src="https://i.ibb.co/vQYQbg0/Person-360-salesforce.png" alt=""/>
             </div>
 
             <div className="flex justify-center items-center flex-wrap gap-10 xl:gap-32  w-full mx-auto">
 
                 <ProductCardWhyChoose name="Marketing" imageUrl="https://i.ibb.co/jDq9Fg1/image-7-1.png"
                                       description="Atraia mais compradores com uma estratégia
-                 de marketing personalizada" />
-                <ProductCardWhyChoose name="Sales" imageUrl="https://i.ibb.co/VQyLg7Z/image-7-3.png"
-                                      description="Conquiste mais clientes conhecendo suas necessidades
-                 e preocupações." />
+                 de marketing personalizada"/>
+                <ProductCardWhyChoose name="Service" imageUrl="https://i.ibb.co/VQyLg7Z/image-7-3.png"
+                                      description="Responda rapidamente aos problemas de suporte ao cliente em qualquer
+                                       canal."/>
                 <ProductCardWhyChoose name="Sales" imageUrl="https://i.ibb.co/BcwnVgZ/image-7-2.png"
                                       description="Conquiste mais clientes conhecendo suas necessidades
-                 e preocupações." />
+                 e preocupações."/>
 
             </div>
 
@@ -53,20 +56,44 @@ const WhyChoose = () => {
                  "/>
                 </div>
 
-                <img className="w-[75%] sm:w-[40%] lg:w-[30%] xl:w-[25%]" src="https://i.ibb.co/Tv8N9yH/image-12.png" alt=""/>
+                <img className="w-[75%] sm:w-[40%] lg:w-[30%] xl:w-[25%]" src="https://i.ibb.co/Tv8N9yH/image-12.png"
+                     alt="placa da Salesforce sobre inovação, igualdade, segurança e sustentabilidade"/>
 
             </div>
 
-            <div>
-                <h2 className="font-bold text-center text-xl">Mais de 150.000 empresas, grandes, médias e pequenas, estão expandindo seus negócios
+            <div className="flex flex-col items-center gap-6">
+                <h2 className="font-bold text-center     text-xl">Mais de 150.000 empresas, grandes, médias e pequenas,
+                    estão expandindo seus negócios
                     com a Salesforce.</h2>
 
-                <div className="flex justify-center gap-10 w-full">
-                    <img className="w-[10%]" src="https://i.ibb.co/HB5tX1z/image-11.png" alt=""/>
-                    <img className="w-[180px]" src="https://i.ibb.co/yhQk1RS/image-9.png" alt=""/>
-                    <img className="w-[10%]" src="https://i.ibb.co/xYn0RjM/image-10.png" alt=""/>
+                <div className="flex justify-center wrap items-center gap-10 w-[23%] max-w-sm">
+
+                    <ClientCompaniesImages imageUrl="https://i.ibb.co/HB5tX1z/image-11.png"
+                                           alt="placa da Salesforce"/>
+
+                    <ClientCompaniesImages imageUrl="https://i.ibb.co/yhQk1RS/image-9.png"
+                                           alt="placa da Salesforce"/>
+
+                    <ClientCompaniesImages imageUrl="https://i.ibb.co/xYn0RjM/image-10.png"
+                                           alt="placa da Salesforce"/>
                 </div>
+
             </div>
+            <h2 className="font-bold text-lg text-center">Deseja saber mais sobre a Salesforce?</h2>
+
+                <div className="flex flex-col justify-center items-center gap-12 ">
+                    <ContactCardSales
+                        mainText="Contate-nos"
+                        text="Ligue para 0800 891 1887, ou clique no chat no botão abaixo para entrar em contato"
+                        buttonText="Contato"/>
+
+                    <ContactCardSales
+                        mainText="Começa agora"
+                        text="Experimente o Salesforce gratuitamente por 30 dias - sem necessidade de cartão de crédito,
+                         nem software para instalar."
+                        buttonText="Quero começar"/>
+                </div>
+
         </div>
     );
 };
