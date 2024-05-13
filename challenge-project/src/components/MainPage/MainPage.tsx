@@ -1,8 +1,8 @@
 import MainHeroApresentation from "./MainHeroApresentation.tsx";
-import MainPageCard from "./MainPageCard.tsx";
+import MainPageCard from "../Cards/MainPageCard.tsx";
 import MPCompanyFeedback from "./MPCompanyFeedback.tsx";
-import MPButton from "./MPButton.tsx";
-import WhiteButtonSalesforce from "./WhiteButtonSalesforce.tsx";
+import MPButton from "../buttons/MPButton.tsx";
+import WhiteButtonSalesforce from "../buttons/WhiteButtonSalesforce.tsx";
 
 function MainPage() {
     return (

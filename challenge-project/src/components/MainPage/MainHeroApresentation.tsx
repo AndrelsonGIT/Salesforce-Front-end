@@ -1,5 +1,5 @@
 import "./MainHeroApresentation.css"
-import MainHeroButton from "./MainHeroButton.tsx";
+import MainHeroButton from "../buttons/MainHeroButton.tsx";
 
 const MainHeroApresentation = () => {
     return (

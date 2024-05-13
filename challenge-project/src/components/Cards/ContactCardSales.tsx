@@ -1,4 +1,4 @@
-import WhiteButtonSalesforce from "../MainPage/WhiteButtonSalesforce.tsx";
+import WhiteButtonSalesforce from "../buttons/WhiteButtonSalesforce.tsx";
 
 interface ContactCardSalesProps{
     mainText: string;

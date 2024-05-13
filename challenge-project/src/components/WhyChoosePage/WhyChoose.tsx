@@ -1,7 +1,7 @@
-import ProductCardWhyChoose from "./ProductCardWhyChoose.tsx";
+import ProductCardWhyChoose from "../Cards/ProductCardWhyChoose.tsx";
 import WhyChooseText from "./WhyChooseText.tsx";
 import ClientCompaniesImages from "./ClientCompaniesImages.tsx";
-import ContactCardSales from "./ContactCardSales.tsx";
+import ContactCardSales from "../Cards/ContactCardSales.tsx";
 
 
 const WhyChoose = () => {
