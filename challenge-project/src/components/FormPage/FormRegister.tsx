@@ -117,7 +117,7 @@ const FormRegister = () => {
                                    -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4
                                     peer-focus:text-blue-600 peer-placeholder-shown:scale-100
                                      peer-placeholder-shown:translate-y-0 peer-focus:scale-75
-                                     peer-focus:-translate-y-6">Empresa</label>
+                                     peer-focus:-translate-y-6">Setor/Area</label>
 
                     </div>
 
