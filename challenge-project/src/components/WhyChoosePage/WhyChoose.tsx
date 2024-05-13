@@ -2,6 +2,7 @@ import ProductCardWhyChoose from "../Cards/ProductCardWhyChoose.tsx";
 import WhyChooseText from "./WhyChooseText.tsx";
 import ClientCompaniesImages from "./ClientCompaniesImages.tsx";
 import ContactCardSales from "../Cards/ContactCardSales.tsx";
+import {Link} from "react-router-dom";
 
 
 const WhyChoose = () => {
@@ -20,15 +21,15 @@ const WhyChoose = () => {
 
             <div className="flex justify-center items-center flex-wrap gap-10 xl:gap-32  w-full mx-auto">
 
-                <ProductCardWhyChoose name="Marketing" imageUrl="https://i.ibb.co/jDq9Fg1/image-7-1.png"
+                <Link to="/salesMarketingCloud"><ProductCardWhyChoose name="Marketing" imageUrl="https://i.ibb.co/jDq9Fg1/image-7-1.png"
                                       description="Atraia mais compradores com uma estratégia
-                 de marketing personalizada"/>
-                <ProductCardWhyChoose name="Service" imageUrl="https://i.ibb.co/VQyLg7Z/image-7-3.png"
+                 de marketing personalizada"/></Link>
+                <Link to="/salesServiceCloud"><ProductCardWhyChoose name="Service" imageUrl="https://i.ibb.co/VQyLg7Z/image-7-3.png"
                                       description="Responda rapidamente aos problemas de suporte ao cliente em qualquer
-                                       canal."/>
-                <ProductCardWhyChoose name="Sales" imageUrl="https://i.ibb.co/BcwnVgZ/image-7-2.png"
+                                       canal."/></Link>
+                <Link to="/salesMarketingCloud"><ProductCardWhyChoose name="Sales" imageUrl="https://i.ibb.co/BcwnVgZ/image-7-2.png"
                                       description="Conquiste mais clientes conhecendo suas necessidades
-                 e preocupações."/>
+                 e preocupações."/></Link>
 
             </div>
 
@@ -82,16 +83,16 @@ const WhyChoose = () => {
             <h2 className="font-bold text-lg text-center">Deseja saber mais sobre a Salesforce?</h2>
 
                 <div className="flex flex-col justify-center items-center gap-12 ">
-                    <ContactCardSales
+                    <Link to="/formRegister"><ContactCardSales
                         mainText="Contate-nos"
                         text="Ligue para 0800 891 1887, ou clique no chat no botão abaixo para entrar em contato"
-                        buttonText="Contato"/>
+                        buttonText="Contato"/></Link>
 
-                    <ContactCardSales
+                    <Link to="/formRegister"><ContactCardSales
                         mainText="Começa agora"
                         text="Experimente o Salesforce gratuitamente por 30 dias - sem necessidade de cartão de crédito,
                          nem software para instalar."
-                        buttonText="Quero começar"/>
+                        buttonText="Quero começar"/></Link>
                 </div>
 
         </div>

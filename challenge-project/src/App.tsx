@@ -12,8 +12,9 @@ import SalesServiceProduct from "./components/products/SalesService/SalesService
 function App() {
   return (
     <>
-        <Header/>
+
         <BrowserRouter>
+            <Header/>
             <Routes>
                 <Route path="/" element={<MainPage/>}></Route>
                 <Route path="/formRegister" element={<FormRegister/>}></Route>

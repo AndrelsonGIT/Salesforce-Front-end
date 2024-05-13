@@ -3,6 +3,7 @@ import MainPageCard from "../Cards/MainPageCard.tsx";
 import MPCompanyFeedback from "./MPCompanyFeedback.tsx";
 import MPButton from "../buttons/MPButton.tsx";
 import WhiteButtonSalesforce from "../buttons/WhiteButtonSalesforce.tsx";
+import {Link} from "react-router-dom";
 
 function MainPage() {
     return (
@@ -62,7 +63,7 @@ function MainPage() {
                         <p className="text-center text-primary-color md:text-left  lg:text-lg">CRM é a sigla usada para Customer Relationship Management e se refere ao conjunto de
                             práticas, estratégias de negócio e tecnologias focadas no relacionamento com o cliente.
                             Confira abaixo tudo que você precisa saber sobre CRM..</p>
-                        <MPButton name="Saiba mais"></MPButton>
+                        <Link to="/whyChooseSalesforce"><MPButton name="Saiba mais"></MPButton></Link>
                     </div>
                     <img className="w-[60%] md:w-[40%]" src="https://i.ibb.co/RyHD1dw/image-6-1.png" alt="images descrevendo o que é CRM"/>
                 </div>
@@ -73,15 +74,15 @@ function MainPage() {
                 <p className="text-white w-[50%] md:m-0">
                 Experimente o Salesforce gratuitamente. Não é necessário cartão de crédito nem instalação de software.
                 </p>
-                <WhiteButtonSalesforce text="Começar teste gratuito"/>
+                <Link to="formRegister"><WhiteButtonSalesforce text="Começar teste gratuito"/></Link>
             </div>
 
             <div className="flex gap-3 sm:text-lg justify-center items-center flex-col mt-10 w-[70%]">
                 <h2 className="text-center w-40 sm:w-52 font-bold md:text-lg md:w-60 lg:text-2xl">
                     Você tem dúvidas? Vamos ajudá-lo a encontrar a direção correta</h2>
-                <button className="border-2 border-primary-color rounded-md p-3 hover:bg-primary-color
+                <Link to="formRegister"><button className="border-2 border-primary-color rounded-md p-3 hover:bg-primary-color
                  hover:text-white transition duration-150 ease-in-out">
-                    Entre em contato</button>
+                    Entre em contato</button></Link>
             </div>
         </div>
 

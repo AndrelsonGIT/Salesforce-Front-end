@@ -1,6 +1,7 @@
 import PriceCardProps from "../type/PriceCardType.tsx";
 import MPButton from "../buttons/MPButton.tsx";
 import { IoCheckmark } from "react-icons/io5";
+import {Link} from "react-router-dom";
 const PriceCard: React.FC<PriceCardProps> = ({cardName, cardPrice, plansBenefitsText }) => {
     return (
 
@@ -21,7 +22,7 @@ const PriceCard: React.FC<PriceCardProps> = ({cardName, cardPrice, plansBenefits
 
                 ))}
             </ol>
-            <MPButton name="Entre em contato conosco"></MPButton>
+            <Link to="/formRegister"><MPButton name="Entre em contato conosco"></MPButton></Link>
         </div>
 
 
