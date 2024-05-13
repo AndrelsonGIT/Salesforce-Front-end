@@ -43,7 +43,7 @@ const SalesCloudProduct = () => {
             <div className="flex items-center justify-center gap-5 mt-10 ">
                 <h2 className="font-bold text-2xl xl:text-3xl text-center">O que é possivel fazer com <span
                     className="text-[#09A398] font-bold">Sales Cloud</span> ?</h2>
-                <img className="w-[15%] md:w-[12%] lg:w-[9%] hidden sm:block" src="https://i.ibb.co/nQJ60CM/xcc-sales-animation-test-v008-1.png" alt=""/>
+                <img className="w-[15%] md:w-[12%] lg:w-[9%] hidden sm:block" src="https://i.ibb.co/nQJ60CM/xcc-sales-animation-test-v008-1.png" alt="Ilustração Sales Cloud"/>
             </div>
 
             <CarouselsSalesCloud/>
