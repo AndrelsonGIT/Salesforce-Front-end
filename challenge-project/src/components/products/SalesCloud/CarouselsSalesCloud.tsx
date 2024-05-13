@@ -79,7 +79,7 @@ const CarouselsSalesCloud = () => {
 
 
     return (
-        <div className="flex flex-col w-full gap-8 sm:gap-12 items-center ">
+        <div className="flex flex-col w-full gap-8 sm:gap-12 items-center">
 
             <CarouselProductCard images={firstImages}/>
 

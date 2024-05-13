@@ -1,8 +1,8 @@
 import MPButton from "../../buttons/MPButton.tsx";
 import CompanyWhoUseSalesforce from "../SalesCloud/CompanyWhoUseSalesforce.tsx";
-import CarouselsSalesCloud from "../SalesCloud/CarouselsSalesCloud.tsx";
 import TitleProductsPrice from "../../Titles/TitleProductsPrice.tsx";
-import ListPriceSalesCloud from "../SalesCloud/ListPriceSalesCloud.tsx";
+import CarouselsMarketingCloud from "./CarouselsMarketingCloud.tsx";
+import ListPriceMarketingCloud from "./ListPriceMarketingCloud.tsx";
 
 const SalesMarketingProduct = () => {
     return (
@@ -11,7 +11,7 @@ const SalesMarketingProduct = () => {
             <img
                 className="absolute w-[80%] hidden opacity-25 md:block lg:opacity-20 -z-10    right-0"
                 src="https://i.ibb.co/j45Tsst/marquee-marketing-product-background-desktop-3.webp"
-                alt="fundo Sales Cloud"/>
+                alt="fundo Marketing Cloud"/>
 
             <div className="flex flex-col md:mt-10 lg:mt-14 gap-7 py-5 max-w-lg self-start">
 
@@ -44,18 +44,17 @@ const SalesMarketingProduct = () => {
 
             <div className="flex items-center justify-center gap-5 mt-10 ">
                 <h2 className="font-bold text-2xl xl:text-3xl text-center">O que é possivel fazer com uma plataforma de <span
-                    className="text-[#FE9339] font-bold">Marketing</span> ?</h2>
+                    className="text-[#FE9339] font-bold">Marketing Cloud</span> ?</h2>
                 <img className="w-[13%] md:w-[12%] lg:w-[9%] hidden sm:block"
-                     src="https://i.ibb.co/ckZN4SW/marquee-marketing-engagement.webp" alt=""/>
+                     src="https://i.ibb.co/ckZN4SW/marquee-marketing-engagement.webp" alt="Ilustração Marketing Cloud"/>
             </div>
 
-            <CarouselsSalesCloud/>
+            <CarouselsMarketingCloud/>
 
             <div className="flex flex-col gap-8">
-                <TitleProductsPrice text="Sales Cloud Preços."/>
-                <p className="text-s-gray text-center xl:text-lg">Descubra qual é a edição ideal do Sales Cloud para as
-                    suas necessidades de negócios.</p>
-                <ListPriceSalesCloud/>
+                <TitleProductsPrice text="Encontre a edição certa do Marketing Cloud Engagement para a sua empresa."/>
+
+                <ListPriceMarketingCloud/>
             </div>
 
 

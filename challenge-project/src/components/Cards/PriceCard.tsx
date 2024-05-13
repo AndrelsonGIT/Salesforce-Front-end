@@ -8,7 +8,7 @@ const PriceCard: React.FC<PriceCardProps> = ({cardName, cardPrice, plansBenefits
         e border-4 border-t-primary-color rounded-lg sm:p-10">
             <h5 className="mb-4 text-xl font-medium text-primary-color">{cardName}</h5>
             <div className="flex flex-col items-center text-lg ">
-                <h3>${cardPrice}</h3>
+                <h3 className="text-blue-800">${cardPrice}</h3>
                 <h5>USD/usuário/mês</h5>
                 <p>(cobrado anualmente)</p>
             </div>
@@ -21,7 +21,7 @@ const PriceCard: React.FC<PriceCardProps> = ({cardName, cardPrice, plansBenefits
 
                 ))}
             </ol>
-            <MPButton name="Experimente Grátis"></MPButton>
+            <MPButton name="Entre em contato conosco"></MPButton>
         </div>
 
 
