@@ -8,6 +8,7 @@ import WhyChoose from "./components/WhyChoosePage/WhyChoose.tsx";
 import SalesCloudProduct from "./components/products/SalesCloud/SalesCloudProduct.tsx";
 import SalesMarketingProduct from "./components/products/SalesMarketing/SalesMarketingProduct.tsx";
 import SalesServiceProduct from "./components/products/SalesService/SalesServiceProduct.tsx";
+import FeedbackPage from "./components/FeedbackPage/FeedbackPage.tsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/salesCloudProduct" element={<SalesCloudProduct/>}></Route>
                 <Route path="/salesMarketingCloud" element={<SalesMarketingProduct/>}></Route>
                 <Route path="/salesServiceCloud" element={<SalesServiceProduct/>}></Route>
+                <Route path="/feedback" element={<FeedbackPage/>}></Route>
             </Routes>
         </BrowserRouter>
 

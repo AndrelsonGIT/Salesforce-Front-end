@@ -1,4 +1,6 @@
-import * as axios from "axios";
+import axios from 'axios'
+import {Navigate} from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 const FormRegister = () => {
 
@@ -12,19 +14,22 @@ const FormRegister = () => {
             email: formData.get('email'),
             password: formData.get('password'),
             position: formData.get('position'),
-            telephoneNumber: parseInt(formData.get('telephoneNumber')),
             companyName: formData.get('companyName'),
             companySector: formData.get('companySector')
         };
 
         try {
-            // const response = await axios.post('URL_DO_SEU_ENDPOINT', data);
-            // console.log(response.data);
-            console.log(data.telephoneNumber)
-            // Aqui você pode lidar com a resposta, como redirecionar o usuário para outra página ou mostrar uma mensagem de sucesso.
+            const response = await axios.post('http://localhost:8080/user', JSON.stringify(data), {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            window.alert("Registrado com sucesso")
+
+
         } catch (error) {
-            console.error(error);
-            // Aqui você pode lidar com erros, como mostrar uma mensagem de erro.
+            window.alert("Email ja registrado");
         }
     };
 
@@ -120,19 +125,6 @@ const FormRegister = () => {
                     </div>
                 </div>
                 <div className="grid md:grid-cols-2 md:gap-6">
-                    <div className="relative z-0 w-full mb-5 group">
-                        <input type="tel" name="telephoneNumber" id="telephoneNumber"
-                               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none
-                                focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
-                        <label htmlFor="telephoneNumber"
-                               className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform
-                                -translate-y-6 scale-75 top-3 -z-10 origin-[0]
-                                 peer-focus:start-0 rtl:peer-focus:translate-x-1/4
-                                  peer-focus:text-blue-600 peer-placeholder-shown:scale-100
-                                  peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                            Numero de telefone</label>
-                    </div>
                     <div className="relative z-0 w-full mb-5 group">
                         <input type="text" name="companySector" id="companySector"
                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none
