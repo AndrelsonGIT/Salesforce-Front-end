@@ -1,13 +1,12 @@
-import axios from 'axios'
-import {Navigate} from "react-router-dom";
-import { useHistory } from 'react-router-dom';
+import axios, {AxiosResponse} from 'axios'
+import {FormEvent} from "react";
 
 const FormRegister = () => {
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const formData = new FormData(event.target);
+        const formData: FormData = new FormData(event.currentTarget);
 
         const data = {
             name: formData.get('name'),
@@ -19,7 +18,7 @@ const FormRegister = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/user', JSON.stringify(data), {
+            const response: AxiosResponse = await axios.post('http://localhost:8080/user', JSON.stringify(data), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -35,7 +34,7 @@ const FormRegister = () => {
 
 
     return (
-        <div className="mt-5 sm:mt-10 flex flex-col items-center justify-center gap-10">
+        <div className=" flex flex-col items-center justify-center gap-10">
             <img src="https://i.ibb.co/jwTJ76M/image-4-1.png" alt="Imagem de fundo floresta animada" className="absolute -z-10 lg:bottom-0"/>
             <img className="w-[35%] sm:w-40 container" src="https://i.ibb.co/Vj9Lp6Q/pngwing-com-1.png" alt="Logo salesforce"/>
             <h2 className="text-center">Inscreva-se para começar a sua avaliação gratuita</h2>
@@ -55,6 +54,20 @@ const FormRegister = () => {
                               peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                         Nome</label>
                 </div>
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="text" name="fullname" id="fullname"
+                           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
+                            border-0 border-b-2 border-gray-300 appearance-none
+                             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder=" " required/>
+                    <label htmlFor="fullname"
+                           className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
+                            transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+                             peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
+                              peer-placeholder-shown:scale-100
+                              peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Sobrenome</label>
+                </div>
 
                 <div className="relative z-0 w-full mb-5 group">
                     <input type="email" name="email" id="email"
@@ -69,6 +82,21 @@ const FormRegister = () => {
                               5 peer-focus:-translate-y-6">E-mail</label>
 
                 </div>
+
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="telephoneNumber" name="telephoneNumber" id="telephoneNumber"
+                           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2
+                            border-gray-300 appearance-none
+                             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder=" " required/>
+                    <label htmlFor="telephoneNumber"
+                           className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
+                            transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0
+                             rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-7
+                              5 peer-focus:-translate-y-6">Nùmero de Telefone</label>
+
+                </div>
+
                 <div className="relative z-0 w-full mb-5 group">
                     <input type="password" name="password" id="password"
                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
@@ -97,9 +125,23 @@ const FormRegister = () => {
                               peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                         Confirmar Senha</label>
                 </div>
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="text" name="position" id="position"
+                           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
+                            border-0 border-b-2 border-gray-300 appearance-none
+                             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder="" required/>
+                    <label htmlFor="floating_password"
+                           className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
+                            transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+                             peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
+                              peer-placeholder-shown:scale-100
+                              peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Cargo</label>
+                </div>
                 <div className="grid md:grid-cols-2 md:gap-6">
                     <div className="relative z-0 w-full mb-5 group">
-                        <input type="text" name="position" id="position"
+                        <input type="text" name="companyName" id="companyName"
                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none
                                 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                placeholder=" " required/>
@@ -108,11 +150,11 @@ const FormRegister = () => {
                                -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0
                                 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100
                                  peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                            Cargo
+                            Empresa
                         </label>
                     </div>
                     <div className="relative z-0 w-full mb-5 group">
-                        <input type="text" name="companyName" id="floating_last_name"
+                        <input type="text" name="companySecotr" id="companySector"
                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none
                                 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                placeholder=" " required/>
@@ -121,27 +163,22 @@ const FormRegister = () => {
                                duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
                                peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
                                 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
-                                 peer-focus:scale-75 peer-focus:-translate-y-6">Empresa</label>
+                                 peer-focus:scale-75 peer-focus:-translate-y-6">Setor/Area</label>
                     </div>
                 </div>
-                <div className="grid md:grid-cols-2 md:gap-6">
-                    <div className="relative z-0 w-full mb-5 group">
-                        <input type="text" name="companySector" id="companySector"
-                               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none
-                                focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
-                        <label htmlFor="companySector"
-                               className="peer-focus:font-medium
-                                absolute text-sm
-                                 text-gray-500 duration-300 transform
-                                  -translate-y-6 scale-75 top-3
-                                   -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4
-                                    peer-focus:text-blue-600 peer-placeholder-shown:scale-100
-                                     peer-placeholder-shown:translate-y-0 peer-focus:scale-75
-                                     peer-focus:-translate-y-6">Setor/Area</label>
-
-                    </div>
-
+                <div className="relative z-0 w-full mb-5 group">
+                    <input type="text" name="position" id="position"
+                           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
+                            border-0 border-b-2 border-gray-300 appearance-none
+                             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder="" required/>
+                    <label htmlFor="floating_password"
+                           className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
+                            transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+                             peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
+                              peer-placeholder-shown:scale-100
+                              peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Quantidade Funcionarios</label>
                 </div>
                 <button type="submit"
                         className="text-white bg-primary-color hover:bg-secondary-color
