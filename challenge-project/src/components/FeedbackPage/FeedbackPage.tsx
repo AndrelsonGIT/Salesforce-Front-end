@@ -1,32 +1,44 @@
-import axios from "axios";
+import axios, {AxiosResponse, get} from "axios";
+import { FaRegStar } from "react-icons/fa";
+import {FormEvent} from "react";
+
+interface feedbackRequestData {
+    feedbackType: string;
+    feedbackText: string;
+    feedbackNote: number;
+    feedbackUserEmail?: string;
+}
 
 const FeedbackPage = () => {
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const formData = new FormData(event.target);
+        const formData = new FormData(event.currentTarget);
 
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            password: formData.get('password'),
-            position: formData.get('position'),
-            companyName: formData.get('companyName'),
-            companySector: formData.get('companySector')
+        const data: feedbackRequestData = {
+            feedbackType: formData.get('feedbackOption') ,
+            feedbackText: formData.get('feedback'),
+            feedbackNote: parseInt(formData.get('feedbackNote')),
         };
 
+        const feedbackUserEmail = formData.get('optionalEmail');
+
+        if(feedbackUserEmail && feedbackUserEmail.trim().length > 0){
+            data.feedbackUserEmail = feedbackUserEmail;
+        }
+
+
         try {
-            const response = await axios.post('http://localhost:8080/user', JSON.stringify(data), {
+            const response : AxiosResponse = await axios.post('http://localhost:8080/feedback', JSON.stringify(data), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
-
             window.alert("Registrado com sucesso")
 
 
         } catch (error) {
-            window.alert("Email ja registrado");
+            console.log(error)
         }
     };
 
@@ -39,26 +51,39 @@ const FeedbackPage = () => {
             <form onSubmit={handleSubmit} className="max-w-3xl p-5 w-full md:w-3/4 md:max-w-2xl rounded-xl bg-white">
 
                 <div className="relative z-0 w-full mb-5 group">
-                    <select name="position" id="position"
+                    <select name="feedbackOption" id="feedbackOption"
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none
              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             required>
                         <option value="">Selecione uma opção de feedback</option>
-                        <option value="navegação">Navegação</option>
-                        <option value="chatbot">ChatBot</option>
-                        <option value="vlibras">VLibras</option>
+                        <option value="Navegação">Navegação</option>
+                        <option value="Chatbot">ChatBot</option>
+                        <option value="VLibras">VLibras</option>
                         <option value="produtos">Produtos</option>
-
+                        <option value="website">Website</option>
+                        <option value="Outros">Outros</option>
                     </select>
                 </div>
 
                 <div className="relative z-0 w-full mb-5 group">
-                    <input type="number" minLength={1} maxLength={5} name="email" id="email"
-                           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2
+                    {/*<input type="number" max={5} min={0} name="email" id="email"*/}
+                    {/*       className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2*/}
+                    {/*        border-gray-300 appearance-none*/}
+                    {/*         focus:outline-none focus:ring-0 focus:border-blue-600 peer"*/}
+                    {/*       placeholder=" " required/>*/}
+                    <div className="flex items-center justify-center py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2
                             border-gray-300 appearance-none
-                             focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                           placeholder=" " required/>
-                    <label htmlFor="email"
+                             focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                        <select className="w-1/2 row-start-1 col-start-1 " name="feedbackNote" id="feedbackNote">
+                            <option value={5}>5 - Fantástico</option>
+                            <option value={4}>4 - Ótimo</option>
+                            <option value={3}>3 - Okay</option>
+                            <option value={2}>2 - Ruim</option>
+                            <option value={1}>1 - Terrivel</option>
+                        </select>
+                    </div>
+
+                    <label htmlFor="feedbackNote"
                            className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
                             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0
                              rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-7
@@ -66,26 +91,26 @@ const FeedbackPage = () => {
 
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
-                    <input type="text" name="feedback" id="feedback"
-                           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
+                    <textarea name="feedback" id="feedback"
+                           className="block py-10 px-0 w-full text-sm text-gray-900 bg-transparent
                             border-0 border-b-2 border-gray-300 appearance-none
                              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                           placeholder=" " required/>
-                    <label htmlFor="password"
+                           placeholder="" minLength={50} required/>
+                    <label htmlFor="feedback"
                            className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
                             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
                              peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
                               peer-placeholder-shown:scale-100
                               peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                        Seu feedback</label>
+                        Escreva o seu feedback</label>
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
-                    <input type="password" name="confirm_password" id="confirm_password"
+                    <input type="email" name="optionalEmail" id="optionalEmail"
                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
                             border-0 border-b-2 border-gray-300 appearance-none
                              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                           placeholder="" required/>
-                    <label htmlFor="floating_password"
+                           placeholder="" />
+                    <label htmlFor="optionalEmail"
                            className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
                             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
                              peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
