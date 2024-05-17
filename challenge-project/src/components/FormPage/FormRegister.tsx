@@ -8,13 +8,8 @@ const FormRegister = () => {
 
         const formData: FormData = new FormData(event.currentTarget);
 
-        const map = new Map();
-
-        const qtdEmployees = {
-            minEmployees: 0,
-            maxEmployees: 0
-        }
-
+        const map = new Map()
+        
         map.set('1-50', {
             minEmployees: 1,
             maxEMployees: 50
