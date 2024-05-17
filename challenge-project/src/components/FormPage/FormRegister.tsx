@@ -152,8 +152,8 @@ const FormRegister = () => {
                         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
                             border-0 border-b-2 border-gray-300 appearance-none
                              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder="" required />
-                    <label htmlFor="floating_password"
+                        placeholder=" " required />
+                    <label htmlFor="confirm_password"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
                             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
                              peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
@@ -162,12 +162,12 @@ const FormRegister = () => {
                         Confirmar Senha</label>
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
-                    <input type="text" name="position" id="position"
+                    <input type="password" name="position" id="position"
                         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
                             border-0 border-b-2 border-gray-300 appearance-none
                              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder="" required />
-                    <label htmlFor="floating_password"
+                        placeholder=" " required />
+                    <label htmlFor="position"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300
                             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
                              peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600
