@@ -1,8 +1,9 @@
 import axios, { AxiosResponse } from 'axios'
 import { FormEvent } from "react";
-import {Navigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const FormRegister = () => {
+    const navigate = useNavigate();
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -59,7 +60,8 @@ const FormRegister = () => {
 
             if (response.status === 200 || response.status === 201) { // Assuming successful registration has status 200 or 201
                 console.log("DEU CERTO")
-                return <Navigate to="/" />;  // Redirect to the main page after successful registration
+
+                navigate("/")
             } else {
                 // Handle other status codes (e.g., display an error message)
             }

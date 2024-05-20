@@ -76,16 +76,16 @@ const Header = () => {
                     <Link to="/formRegister">
 
 
-                    <button
-                        onClick={handleClick}
-                        className="h-10 px-5 py-0.5 text-center px-2 bg-primary-color text-white rounded"> Cadastrar
-                    </button>
+                        <button
+                            onClick={handleClick}
+                            className="h-10 px-5 py-0.5 text-center px-2 bg-primary-color text-white rounded"> Cadastrar
+                        </button>
                     </Link>
                     <Link to="/logIn">
-                    <button
-                        onClick={handleClick}
-                        className="h-10 px-5 py-0.5 text-center px-2 bg-green-500 text-white rounded"> Login
-                    </button>
+                        <button
+                            onClick={handleClick}
+                            className="h-10 px-5 py-0.5 text-center px-2 bg-green-500 text-white rounded"> Login
+                        </button>
                     </Link>
                 </ul>
             </div>
