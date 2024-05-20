@@ -6,7 +6,7 @@ import ListPriceMarketingCloud from "./ListPriceMarketingCloud.tsx";
 
 const SalesMarketingProduct = () => {
     return (
-        <div className="relative h-screen flex gap-9 md:gap-8 2xl:gap-12 items-center flex-col">
+        <main className="relative h-screen flex gap-9 md:gap-8 2xl:gap-12 items-center flex-col">
 
             <img
                 className="absolute w-[80%] hidden opacity-25 md:block lg:opacity-20 -z-10    right-0"
@@ -58,7 +58,7 @@ const SalesMarketingProduct = () => {
             </div>
 
 
-        </div>
+        </main>
     );
 };
 

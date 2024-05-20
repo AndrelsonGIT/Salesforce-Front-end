@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 import { FormEvent } from "react";
+import {Navigate} from "react-router-dom";
 
 const FormRegister = () => {
 
@@ -40,6 +41,7 @@ const FormRegister = () => {
             name: formData.get('name'),
             fullname: formData.get('fullname'),
             email: formData.get('email'),
+            telephoneNumber: formData.get('telephoneNumber'),
             password: formData.get('password'),
             position: formData.get('position'),
             companyName: formData.get('companyName'),
@@ -55,17 +57,21 @@ const FormRegister = () => {
                 }
             });
 
-            window.alert("Registrado com sucesso")
-
-
+            if (response.status === 200 || response.status === 201) { // Assuming successful registration has status 200 or 201
+                console.log("DEU CERTO")
+                return <Navigate to="/" />;  // Redirect to the main page after successful registration
+            } else {
+                // Handle other status codes (e.g., display an error message)
+            }
         } catch (error) {
-            window.alert("Email ja registrado");
+            console.error("Registration error:", error);
+            window.alert("Erro no cadastro. Tente novamente."); // More informative error message
         }
     };
 
 
     return (
-        <div className=" flex flex-col items-center justify-center gap-10">
+        <main className=" flex flex-col items-center justify-center gap-10">
             <img src="https://i.ibb.co/jwTJ76M/image-4-1.png" alt="Imagem de fundo floresta animada" className="absolute -z-10 lg:bottom-0" />
             <img className="w-[35%] sm:w-40 container" src="https://i.ibb.co/Vj9Lp6Q/pngwing-com-1.png" alt="Logo salesforce" />
             <h2 className="text-center">Inscreva-se para começar a sua avaliação gratuita</h2>
@@ -157,7 +163,7 @@ const FormRegister = () => {
                         Confirmar Senha</label>
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
-                    <input type="password" name="position" id="position"
+                    <input type="text" name="position" id="position"
                         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent
                             border-0 border-b-2 border-gray-300 appearance-none
                              focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -224,7 +230,7 @@ const FormRegister = () => {
                        ">Inscrever-se
                 </button>
             </form>
-        </div>
+        </main>
     );
 };
 

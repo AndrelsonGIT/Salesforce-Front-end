@@ -7,7 +7,7 @@ import TitleProductsPrice from "../../Titles/TitleProductsPrice.tsx";
 
 const SalesCloudProduct = () => {
     return (
-        <div className="relative h-screen flex gap-9 md:gap-8 2xl:gap-12 items-center flex-col">
+        <main className="relative h-screen flex gap-9 md:gap-8 2xl:gap-12 items-center flex-col">
 
             <img className="absolute w-[80%] hidden opacity-25 md:block lg:opacity-30 -z-10 -top-20 md:-top-32 2xl:-top-48 right-0"
                  src="https://i.ibb.co/dWvFFTw/image-2.png"
@@ -56,7 +56,7 @@ const SalesCloudProduct = () => {
 
 
 
-        </div>
+        </main>
     );
 };
 

@@ -6,7 +6,7 @@ import ListPriceServiceCloud from "./ListPriceServiceCloud.tsx";
 
 const SalesServiceProduct = () => {
     return (
-        <div className="relative h-screen flex gap-9 md:gap-8 2xl:gap-12 items-center flex-col">
+        <main className="relative h-screen flex gap-9 md:gap-8 2xl:gap-12 items-center flex-col">
 
             <img
                 className="absolute w-full hidden opacity-15 md:block rounded-full  -z-10"
@@ -63,7 +63,7 @@ const SalesServiceProduct = () => {
             </div>
 
 
-        </div>
+        </main>
     );
 };
 

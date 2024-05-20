@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 const WhyChoose = () => {
     return (
-        <div className="md:mt-12 flex flex-col gap-16 ">
+        <main className="md:mt-12 flex flex-col gap-16 ">
 
             <img className="w-screen absolute -z-10 -mx-[5%]" src="https://i.ibb.co/VB0LNfv/background-why-choose.png"
                  alt=""/>
@@ -95,7 +95,7 @@ const WhyChoose = () => {
                         buttonText="Quero começar"/></Link>
                 </div>
 
-        </div>
+        </main>
     );
 };
 

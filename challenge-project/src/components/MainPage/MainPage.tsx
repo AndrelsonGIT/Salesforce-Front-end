@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 function MainPage() {
     return (
-        <div className="flex flex-col items-center mt-10 md:mt-20 lg:mt-28">
+        <main className="flex flex-col items-center mt-10 md:mt-20 lg:mt-28">
 
             <MainHeroApresentation/>
 
@@ -84,7 +84,7 @@ function MainPage() {
                  hover:text-white transition duration-150 ease-in-out">
                     Entre em contato</button></Link>
             </div>
-        </div>
+        </main>
 
     );
 }

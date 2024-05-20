@@ -1,5 +1,5 @@
-import axios, {AxiosResponse, get} from "axios";
-import { FaRegStar } from "react-icons/fa";
+import axios, {AxiosResponse} from "axios";
+import API_URL from "../../services/configuration.ts";
 import {FormEvent} from "react";
 
 interface feedbackRequestData {
@@ -21,7 +21,7 @@ const FeedbackPage = () => {
             feedbackNote: parseInt(formData.get('feedbackNote')),
         };
 
-        const feedbackUserEmail = formData.get('optionalEmail');
+        const feedbackUserEmail: string = formData.get('optionalEmail');
 
         if(feedbackUserEmail && feedbackUserEmail.trim().length > 0){
             data.feedbackUserEmail = feedbackUserEmail;
@@ -29,7 +29,7 @@ const FeedbackPage = () => {
 
 
         try {
-            const response : AxiosResponse = await axios.post('http://localhost:8080/feedback', JSON.stringify(data), {
+            const response : AxiosResponse = await axios.post(API_URL+'/feedback', JSON.stringify(data), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -44,7 +44,7 @@ const FeedbackPage = () => {
 
 
     return (
-        <div className="mt-5 sm:mt-10 flex flex-col items-center justify-center gap-10">
+        <main className="mt-5 sm:mt-10 flex flex-col items-center justify-center gap-10">
             <img src="https://i.ibb.co/jwTJ76M/image-4-1.png" alt="Imagem de fundo floresta animada" className="absolute -z-10 lg:bottom-0"/>
             <img className="w-[35%] sm:w-40 container" src="https://i.ibb.co/Vj9Lp6Q/pngwing-com-1.png" alt="Logo salesforce"/>
             <h2 className="text-center">Inscreva-se para começar a sua avaliação gratuita</h2>
@@ -128,7 +128,7 @@ const FeedbackPage = () => {
                 </div>
 
             </form>
-        </div>
+        </main>
     );
 };
 

@@ -15,9 +15,9 @@ const PriceCard: React.FC<PriceCardProps> = ({cardName, cardPrice, plansBenefits
             </div>
             <ol className="flex flex-col items-center justify-center gap-3">
                 {plansBenefitsText.map((element: string, index: number) =>(
-                    <div className="max-w-sm flex items-center justify-center gap-2">
+                    <div className="max-w-sm flex items-center justify-center gap-2" key={index}>
                         <IoCheckmark/>
-                        <p className="text-center w-[100%] text-sm text-s-gray" key={index}>{element}</p>
+                        <p className="text-center w-[100%] text-sm text-s-gray">{element}</p>
                     </div>
 
                 ))}

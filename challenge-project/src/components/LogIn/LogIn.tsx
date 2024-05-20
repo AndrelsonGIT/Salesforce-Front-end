@@ -1,7 +1,7 @@
 
 const LogIn = () => {
     return (
-        <div className="flex mt-5 flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8">
+        <main className="flex mt-5 flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8">
             <img src="https://i.ibb.co/jwTJ76M/image-4-1.png" alt="Imagem de fundo floresta animada"
                  className="absolute  -z-10 sm:bottom-0 "/>
             <div className="sm:mx-auto flex flex-col items-center sm:w-full sm:max-w-sm">
@@ -65,7 +65,7 @@ const LogIn = () => {
 
 
             </div>
-        </div>
+        </main>
     );
 };
 
