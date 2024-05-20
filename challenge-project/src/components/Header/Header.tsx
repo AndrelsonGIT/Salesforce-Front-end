@@ -43,8 +43,9 @@ const Header = () => {
                 <div className="hidden md:flex items-center justify-between">
                     <div className="flex gap-8 items-center sm:text-base">
                         <div>
-                            <p className="list-disc underline decoration-solid cursor-pointer">Entre em contato</p>
-                            <p>0800 891 1887</p>
+                            <Link to={"/feedback"}>
+                            <p className="list-disc text-primary-color underline decoration-solid cursor-pointer">Dar feedback</p>
+                            </Link>
                         </div>
                         <Link to="/logIn">
                             <button

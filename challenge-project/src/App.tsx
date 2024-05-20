@@ -9,7 +9,6 @@ import SalesCloudProduct from "./components/products/SalesCloud/SalesCloudProduc
 import SalesMarketingProduct from "./components/products/SalesMarketing/SalesMarketingProduct.tsx";
 import SalesServiceProduct from "./components/products/SalesService/SalesServiceProduct.tsx";
 import FeedbackPage from "./components/FeedbackPage/FeedbackPage.tsx";
-import ReloadingPage from "./components/FormPage/ReloadingPage.tsx";
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
                 <Route path="/salesMarketingCloud" element={<SalesMarketingProduct/>}></Route>
                 <Route path="/salesServiceCloud" element={<SalesServiceProduct/>}></Route>
                 <Route path="/feedback" element={<FeedbackPage/>}></Route>
-                <Route path="/reloadingPage" element={<ReloadingPage/>}></Route>
             </Routes>
         </BrowserRouter>
 
