@@ -12,7 +12,6 @@ const Header = () => {
         const mainHTML: HTMLBodyElement =  document.querySelector("main");
         const bodyHTML: HTMLBodyElement =  document.getElementsByName("body");
         setShowNavBar(!showNavBar)
-        console.log(mainHTML)
         mainHTML.classList.toggle("blur-sm")
         // console.log(mainHTML)
         // bodyHTML.classList.toggle("overflow-hidden")
@@ -73,6 +72,9 @@ const Header = () => {
 
                     <ListLineMobile text="Produto: Service Cloud" functionOnClick={handleClick}
                                     linkURL="/salesServiceCloud"/>
+
+                    <ListLineMobile text="Dar feedback" functionOnClick={handleClick}
+                                    linkURL="//feedback"/>
 
                     <Link to="/formRegister">
 
