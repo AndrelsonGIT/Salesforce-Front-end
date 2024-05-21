@@ -74,6 +74,9 @@ const Header = () => {
                     <ListLineMobile text="Produto: Service Cloud" functionOnClick={handleClick}
                                     linkURL="/salesServiceCloud"/>
 
+                    <ListLineMobile text="Dar feedback" functionOnClick={handleClick}
+                                    linkURL="//feedback"/>
+
                     <Link to="/formRegister">
 
 
