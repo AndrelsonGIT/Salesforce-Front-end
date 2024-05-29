@@ -9,13 +9,14 @@ const Header = () => {
     const [showNavBar, setShowNavBar] = useState<boolean>(false);
 
     const handleClick = ()=>{
-        const mainHTML: HTMLBodyElement =  document.querySelector("main");
-        const bodyHTML: HTMLBodyElement =  document.getElementsByName("body");
+        const mainHTML =  document.querySelector("main");
         setShowNavBar(!showNavBar)
-        mainHTML.classList.toggle("blur-sm")
+        if (mainHTML) {
+            mainHTML.classList.toggle("blur-sm");
+        }
         // console.log(mainHTML)
         // bodyHTML.classList.toggle("overflow-hidden")
-        console.log("fui clickado");
+
     }
 
     return (

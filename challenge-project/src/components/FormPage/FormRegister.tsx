@@ -1,11 +1,8 @@
 import axios, { AxiosResponse } from 'axios'
 import {FormEvent, useState} from "react";
-import {useNavigate} from "react-router-dom";
 import Reloading from "./Reloading.tsx";
 
 const FormRegister = () => {
-    const navigate = useNavigate();
-
     const [isSendingInfo, setIsSendingInfo] = useState<boolean>(false);
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 

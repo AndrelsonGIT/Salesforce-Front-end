@@ -1,6 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import API_URL from '../../services/configuration';
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import Reloading from '../FormPage/Reloading';
 
 interface feedbackRequestData {
@@ -31,7 +31,7 @@ const FeedbackPage = () => {
         }
 
         try {
-            const response: AxiosResponse = await axios.post(`${API_URL}/feedback`, JSON.stringify(data), {
+            axios.post(`${API_URL}/feedback`, JSON.stringify(data), {
                 headers: {
                     'Content-Type': 'application/json',
                 },
